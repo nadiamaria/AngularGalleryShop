@@ -1,0 +1,39 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "scss.validate": false,
+  "stylelint.configOverrides": {
+    "max-nesting-depth": 7,
+    "scss/at-extend-no-missing-placeholder": null,
+    "function-parentheses-space-inside": null,
+    "indentation": null,
+    "no-duplicate-selectors": true,
+    "color-hex-length": "short",
+    "declaration-no-important": null,
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "rule-empty-line-before": "always"
+  },
+  "stylelint.enable": true,
+  "typescriptHero.imports.organizeOnSave": true
+}

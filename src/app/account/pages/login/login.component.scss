@@ -1,0 +1,86 @@
+@import '~src/app/stylesheets/mixins';
+@import '~src/app/stylesheets/vars';
+
+.login {
+  @include display-flex(row, center, center, nowrap);
+  background-image: url('../../../../assets/img/back_login.jpeg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  &__card {
+    background-color: $card-bakground;
+    border-radius: 25px;
+    height: 350px;
+    padding: 50px;
+    width: 400px;
+
+    &__card-title {
+      color: $login-title;
+      font-size: 40px;
+      padding-bottom: 8px;
+    }
+
+    &__card-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__card-beforeSubmit {
+      padding-bottom: 12px;
+      padding-top: 10px;
+
+      &__card-forgotPass {
+        padding-left: 40px;
+      }
+    }
+
+    &__card-error {
+      color: $card-error-login;
+    }
+
+    &__card-button {
+      background-color: $login-button;
+      color: $button-text;
+    }
+
+    &__card-footer {
+      text-align: center;
+    }
+
+    &__card-links {
+      color: $login-links;
+      text-decoration: none;
+    }
+
+    ::ng-deep {
+      .mat-focused .mat-form-field-label {
+        /*change color of label*/
+        color: $login-form !important;
+      }
+
+      .mat-form-field-underline {
+        /*change color of underline*/
+        background-color: $login-form !important;
+      }
+
+      .mat-form-field-ripple {
+        /*change color of underline when focused*/
+        background-color: $login-form !important;
+      }
+
+      .mat-checkbox-checked.mat-accent
+        .mat-checkbox-ripple
+        .mat-ripple-element {
+        background-color: $login-form !important;
+        opacity: 0.03 !important;
+      }
+
+      .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+      .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: $login-form;
+      }
+    }
+  }
+}

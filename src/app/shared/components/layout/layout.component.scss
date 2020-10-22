@@ -1,0 +1,21 @@
+@import '~src/app/stylesheets/mixins';
+@import '~src/app/stylesheets/vars';
+
+.page {
+  &__content {
+    @include display-flex(row, flex-start, flex-start, nowrap);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__list {
+    height: 100%;
+
+    width: 100%;
+  }
+
+  &__menu {
+    position: absolute;
+    z-index: 2;
+  }
+}

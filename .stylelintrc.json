@@ -1,0 +1,16 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "max-nesting-depth": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "function-parentheses-space-inside": null,
+    "indentation": null,
+    "no-duplicate-selectors": true,
+    "color-hex-length": "short",
+    "declaration-no-important": null,
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always",
+    "selector-pseudo-element-no-unknown": null,
+    "selector-max-compound-selectors": null
+  }
+}

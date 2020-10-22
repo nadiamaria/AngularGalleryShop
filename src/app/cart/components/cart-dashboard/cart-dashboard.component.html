@@ -1,0 +1,21 @@
+<div class="cart">
+  <div class="cart__header">
+    <div class="cart__header-title"><strong> My Cart</strong></div>
+    <div class="cart__header-info">
+      <div class="cart__header-quantity">You have 3 items in your order.</div>
+      <div class="car__header-continue">
+        Want some more?<a [routerLink]="'/products/list'"
+          ><strong>Continue Shopping</strong></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="cart__content">
+    <div class="cart__content-table" *ngFor="let item of products">
+      <app-cart-item
+        [product]="item"
+        (addClick)="refreshOnClick($event)"
+      ></app-cart-item>
+    </div>
+  </div>
+</div>

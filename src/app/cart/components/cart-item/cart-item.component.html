@@ -1,0 +1,25 @@
+<div class="item">
+  <div class="item__image">
+    <img src="{{ this.product.image }}" alt="" />
+  </div>
+  <div class="item__name">
+    {{ this.product.name }}
+  </div>
+  <div class="item__size">
+    {{ this.product.size }}
+  </div>
+  <div class="item__price">{{ this.product.price }}$</div>
+  <div class="item__quantity">
+    <app-generic-form [configuration]="quantityConfig"> </app-generic-form>
+  </div>
+  <div class="item__deleteButton">
+    <button
+      (click)="onRemoveProduct(this.product.id)"
+      mat-fab
+      color="basic"
+      aria-label="Example icon button with a delete icon"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

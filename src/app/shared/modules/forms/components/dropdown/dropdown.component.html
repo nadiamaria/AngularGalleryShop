@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label>Order By</mat-label>
+  <mat-select [formControl]="dropdownFormControl">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let Option of sortOptions" [value]="Option.value">
+      {{ Option.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

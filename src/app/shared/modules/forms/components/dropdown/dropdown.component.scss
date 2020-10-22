@@ -1,0 +1,43 @@
+@import '~src/app/stylesheets/mixins';
+@import '~src/app/stylesheets/vars';
+
+.mat-form-field {
+  height: 20px;
+  width: 100%;
+
+  @include respond(gt-xs) {
+    width: 200px;
+  }
+
+  .mat-label {
+    color: $dropdown-label;
+  }
+
+  .mat-select {
+    height: 1px;
+  }
+}
+
+.mat-option-text {
+  color: $dropdown-option-text;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-bottom: 0 !important;
+  border-radius: 10px !important;
+  padding: 1px !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex .mat-form-field-infix {
+  padding: 1px !important;
+}
+
+.mat-option {
+  background-color: $dropdown-option-background;
+  font-size: 1px;
+  height: 10px;
+
+  :active {
+    background-color: $dropdown-option-background-active;
+  }
+}

@@ -1,0 +1,54 @@
+@import '~src/app/stylesheets/mixins';
+
+.class1 {
+  padding: 10px;
+
+  @include respond(gt-sm) {
+    padding: 20px;
+  }
+
+  @include respond(gt-xs) {
+    padding: 5px;
+  }
+}
+
+.class2 {
+  @include respond(gt-xs) {
+  }
+  margin-left: 20px;
+  padding-right: 10px;
+}
+
+.class3 {
+  padding: 0;
+}
+
+.class-numberofproducts {
+  height: 20px;
+  padding: 5px;
+  width: 20px;
+
+  .mat-form-field {
+    width: 20px !important;
+  }
+
+  .mat-form-field-wrapper {
+    width: 20px !important;
+  }
+
+  .mat-form-field-infix {
+    width: 20px !important;
+  }
+
+  .form-container {
+    width: 20px !important;
+  }
+}
+
+.form-container {
+  @include display-flex(column, space-between, flex-start, nowrap);
+
+  @include respond(gt-xs) {
+    @include display-flex(row, space-between, flex-start, wrap);
+  }
+}

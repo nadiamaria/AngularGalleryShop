@@ -1,0 +1,63 @@
+<div class="dashboard">
+  <div class="dashboard__list-orderby">
+    <div class="dashboard__list-shadowbox dashboard__list-numberprods">
+      There are 4 products in your search.
+    </div>
+    <div
+      [ngClass]="{
+        'dashboard__list-filter--open': isOpen,
+        'dashboard__list-filter': !isOpen
+      }"
+      class="dashboard__list-shadowbox"
+    >
+      <div class="dashboard__filter-firtsTitle">
+        <strong>FILTERS</strong>
+        <div class="dashboard__filter-buttonMobile">
+          <button
+            (click)="onClickFilter()"
+            type="button"
+            class="dashboard__list-button"
+          >
+            Filter by
+          </button>
+        </div>
+      </div>
+      <div class="dashboard__filter-content">
+        <div class="dashboard__filter-dimensions">
+          <div class="dashboard__filter-secondTitle">Dimensions:</div>
+          <app-generic-form [configuration]="sizeConfig"> </app-generic-form>
+        </div>
+        <div class="dashboard__filter-technique">
+          <div class="dashboard__filter-secondTitle">Technique used:</div>
+          <app-generic-form [configuration]="techniqueConfig">
+          </app-generic-form>
+        </div>
+        <div class="dashboard__filter-type">
+          <div class="dashboard__filter-secondTitle">Type of art:</div>
+          <app-generic-form [configuration]="typeConfig"> </app-generic-form>
+        </div>
+        <div class="dashboard__filter-price">
+          <div class="dashboard__filter-secondTitle">Price:</div>
+          <app-generic-form [configuration]="priceConfig"> </app-generic-form>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard__list-shadowbox dashboard__list-filters">
+      <div class="dashboard__list-numberprods-gtxs">
+        There are 4 products in your search.
+      </div>
+      <div class="dashboard__list-dropdown">
+        <app-generic-form [configuration]="orderConfig"> </app-generic-form>
+      </div>
+      <div class="dashboard__list-buttons">
+        <button
+          (click)="onClickFilter()"
+          type="button"
+          class="dashboard__list-button"
+        >
+          Filter by
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

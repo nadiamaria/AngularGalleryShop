@@ -1,0 +1,52 @@
+<form [formGroup]="configuration.formGroup" class="form-container">
+  <ng-container *ngFor="let field of configuration.formFields">
+    <ng-container [ngSwitch]="field.type">
+      <div
+        *ngSwitchCase="fieldTypeEnum.Checkbox"
+        class="{{ field.classList }} form-container__item"
+      >
+        <mat-checkbox [formControlName]="field.formFieldId">
+          {{ field.title }}
+        </mat-checkbox>
+      </div>
+      <div
+        *ngSwitchCase="fieldTypeEnum.Dropdown"
+        class="{{ field.classList }} form-container__item"
+      >
+        <app-dropdown
+          [options]="field.options"
+          [dropdownFormControl]="
+            configuration.formGroup.controls[field.formFieldId]
+          "
+        ></app-dropdown>
+      </div>
+      <div
+        *ngSwitchCase="fieldTypeEnum.Input"
+        class="{{ field.classList }} form-container__item"
+      >
+        <mat-form-field floatLabel="auto">
+          <input
+            [type]="field.inputType"
+            matInput
+            [placeholder]="field.placeholder"
+            [formControlName]="field.formFieldId"
+          />
+          <ng-container *ngFor="let validation of field.validations">
+            <mat-error
+              *ngIf="
+                configuration.formGroup.controls[field.formFieldId].touched &&
+                configuration.formGroup.controls[field.formFieldId].dirty &&
+                configuration.formGroup.controls[field.formFieldId].hasError(
+                  validation.errorCode
+                )
+              "
+            >
+              {{ validation.errorMesssage }}​​
+            </mat-error>
+          </ng-container>
+        </mat-form-field>
+      </div>
+      <div *ngSwitchDefault>Not configured field</div>
+    </ng-container>
+  </ng-container>
+</form>

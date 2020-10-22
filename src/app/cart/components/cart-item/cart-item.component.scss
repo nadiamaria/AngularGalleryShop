@@ -1,0 +1,13 @@
+@import '~src/app/stylesheets/mixins';
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.item {
+  @include display-flex(row, space-around, center, nowrap);
+  border-bottom: 1px solid rgb(160, 158, 158);
+  padding-bottom: 5px;
+  padding-top: 5px;
+}

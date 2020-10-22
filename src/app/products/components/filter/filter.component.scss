@@ -1,0 +1,265 @@
+@import '~src/app/stylesheets/mixins';
+@import '~src/app/stylesheets/vars';
+@import '~src/app/stylesheets/buttons';
+
+.dashboard {
+  &__filter-button {
+    display: none;
+  }
+
+  &__filter-button--open {
+    background-color: $list-background;
+    margin: 5px;
+    position: absolute;
+    width: 600px;
+    z-index: 2;
+  }
+
+  &__list {
+    height: 100%;
+    width: 100%;
+
+    @include respond(gt-xs) {
+      @include display-flex(column, center, center, nowrap);
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__list--close {
+    display: none;
+  }
+
+  &__list-orderby {
+    @include display-flex(column, flex-start, flex-start, nowrap);
+
+    @include respond(gt-xs) {
+      margin-top: 20px;
+      width: 600px;
+    }
+
+    @include respond(gt-sm) {
+      width: 900px;
+    }
+
+    @include respond(gt-md) {
+      margin-top: 20px;
+      width: 1100px;
+    }
+  }
+
+  &__list-shadowbox {
+    background-color: $shadowbox-background;
+    border: 1px solid $shadowbox-border;
+    width: 100%;
+
+    @include respond(gt-xs) {
+      background-color: inherit;
+    }
+  }
+
+  &__list-numberprods {
+    padding: 10px;
+
+    @include respond(gt-xs) {
+      display: none;
+    }
+  }
+
+  &__list-filter {
+    @include display-flex(column, flex-start, flex-start, nowrap);
+    margin-left: 568px;
+    position: absolute;
+    transition: margin-left 0.5s;
+    width: 250px;
+    z-index: 2;
+
+    @include respond(gt-xs) {
+      @include display-flex(column, flex-start, flex-start, nowrap);
+      height: 250px;
+      margin-left: 0;
+      position: relative;
+      transition: margin-left 0s;
+      width: 600px;
+    }
+
+    @include respond(gt-sm) {
+      @include display-flex(row, space-around, space-around, wrap);
+      display: block;
+      height: 230px;
+      padding: 5px 5px 0;
+      width: 900px;
+    }
+
+    @include respond(gt-md) {
+      @include display-flex(row, space-between, space-between, wrap);
+      width: 1100px;
+    }
+  }
+
+  &__list-filter--open {
+    margin-left: 318px;
+    position: absolute;
+    transition: margin-left 0.5s;
+    width: 250px;
+    z-index: 2;
+    @include respond(gt-xs) {
+      transition: margin-left 0s;
+    }
+  }
+
+  &__filter-buttonMobile {
+    width: 70px;
+    @include respond(gt-xs) {
+      display: none;
+    }
+  }
+
+  &__filter-firtsTitle {
+    @include display-flex(row, space-around, center, nowrap);
+  }
+
+  &__filter-content {
+    @include display-flex(column, space-between, flex-start, nowrap);
+    font-size: x-large;
+    height: auto;
+    padding: 10px;
+    width: 568px;
+
+    @include respond(gt-xs) {
+      @include display-flex(row, flex-start, flex-start, wrap);
+      font-size: medium;
+      height: 270px;
+      padding-left: 15px;
+      width: 600px;
+    }
+
+    @include respond(gt-sm) {
+      height: 200px;
+      width: 900px;
+    }
+
+    @include respond(gt-md) {
+      width: 1100px;
+    }
+  }
+
+  &__list-filters {
+    @include display-flex(row, space-around, space-around, nowrap);
+    height: 58px;
+    width: 100%;
+
+    @include respond(gt-xs) {
+      @include display-flex(row, space-between, space-between, nowrap);
+      margin-top: 20px;
+    }
+
+    @include respond(gt-sm) {
+      margin-top: 5px;
+    }
+  }
+
+  &__filter-secondTitle {
+    padding-bottom: 20px;
+    padding-top: 10px;
+
+    @include respond(gt-xs) {
+      padding-bottom: 2px;
+      padding-top: 5px;
+    }
+  }
+
+  &__list-dropdown {
+    padding: 2px 5px 2px 10px;
+  }
+
+  &__list-numberprods-gtxs {
+    display: none;
+
+    @include respond(gt-xs) {
+      display: block;
+      padding-left: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  &__list-buttons {
+    margin-right: 5px;
+    padding: 2px 5px 2px 10px;
+    width: 50%;
+
+    @include respond(gt-xs) {
+      display: none;
+    }
+  }
+
+  &__list-button {
+    @extend .btn;
+    @extend .btn--active;
+    background-color: $gray-color;
+    border: 0;
+    border-bottom: 1px solid $border-button;
+    height: 50px;
+    width: 100%;
+  }
+
+  &__filter {
+    display: none;
+
+    @include respond(gt-sm) {
+      display: block;
+    }
+  }
+
+  &__filter-dimensions {
+    border-bottom: 1px solid $light-gray-color;
+
+    @include respond(gt-xs) {
+      border-bottom: 0;
+      padding-right: 20px;
+    }
+
+    @include respond(gt-md) {
+      padding-right: 99px;
+    }
+  }
+
+  &__filter-technique {
+    border-bottom: 1px solid $light-gray-color;
+
+    @include respond(gt-xs) {
+      border-bottom: 0;
+    }
+    @include respond(gt-sm) {
+      padding-top: 20px;
+    }
+  }
+
+  &__filter-type {
+    border-bottom: 1px solid $light-gray-color;
+
+    @include respond(gt-xs) {
+      border-bottom: 0;
+      padding-right: 20px;
+    }
+
+    @include respond(gt-md) {
+      padding-right: 150px;
+    }
+  }
+
+  &__filter-price {
+    @include display-flex(row, space-around, center, nowrap);
+    border-bottom: 1px solid $light-gray-color;
+    padding-bottom: 25px;
+
+    @include respond(gt-xs) {
+      @include display-flex(row, space-around, baseline, nowrap);
+      border-bottom: 0;
+    }
+
+    @include respond(gt-sm) {
+      @include display-flex(column, space-around, baseline, nowrap);
+    }
+  }
+}

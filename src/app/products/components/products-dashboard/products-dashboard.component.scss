@@ -1,0 +1,56 @@
+@import '~src/app/stylesheets/mixins';
+@import '~src/app/stylesheets/vars';
+@import '~src/app/stylesheets/buttons';
+
+.dashboard {
+  @include display-flex(column, center, center, nowrap);
+  background-color: $list-background;
+  min-height: 100%;
+  min-width: 100%;
+
+  &__products {
+    @include display-flex(column, center, center, nowrap);
+    height: auto;
+    padding: 5px;
+
+    @include respond(gt-xs) {
+      @include display-flex(row, center, center, wrap);
+      padding-left: 100px;
+      padding-right: 100px;
+      width: 900px;
+    }
+
+    @include respond(gt-sm) {
+      @include display-flex(row, center, center, wrap);
+      padding-left: 0;
+      padding-right: 0;
+      width: 900px;
+    }
+
+    @include respond(gt-md) {
+      @include display-flex(row, center, center, wrap);
+      width: 1100px;
+    }
+  }
+
+  &__products-product {
+    background-color: $product-background;
+    border-radius: 5px;
+    height: 300px;
+    margin: 5px;
+    padding: 10px;
+    width: 600px;
+
+    @include respond(gt-xs) {
+      width: 260px;
+    }
+
+    @include respond(gt-sm) {
+      width: 270px;
+    }
+
+    @include respond(gt-md) {
+      width: 260px;
+    }
+  }
+}
